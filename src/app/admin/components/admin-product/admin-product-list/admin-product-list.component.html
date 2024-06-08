@@ -1,0 +1,30 @@
+<div class="box-body">
+  <a  class="btn btn-success mb-5" [routerLink]="['/admin/product/tools/create']">Thêm sản phẩm</a>
+  <table id="example2" class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Tên giày</th>
+        <th>Mã giày</th>
+        <th>Hình ảnh</th>
+        <th>Giá</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of list | paginate: { itemsPerPage: 10, currentPage: p }">
+        <td>{{item.TenGiay}}</td>
+        <td>{{item.MaLGiay}}</td>
+        <td><img [src]="item.HinhAnh" alt="" srcset="" width="100"></td>
+        <td>{{item.GiaTB}}</td>
+        <td>
+          <a class="btn btn-primary m-3" [routerLink]="['/admin/product/tools/update/', item.id]">
+            <fa-icon [icon]="faPenToSquare"></fa-icon></a>
+          <button (click)="delete(item)" class="btn btn-danger ">
+            <fa-icon [icon]="faTrash"></fa-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </table>
+</div>

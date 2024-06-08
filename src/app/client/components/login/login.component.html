@@ -1,0 +1,154 @@
+<div>
+  <!-- Topbar Start -->
+  <div class="container-fluid">
+    <div class="row bg-secondary py-2 px-xl-5">
+      <div class="col-lg-6 d-none d-lg-block">
+        <div class="d-inline-flex align-items-center">
+          <a class="text-dark" href="">FAQs</a>
+          <span class="text-muted px-2">|</span>
+          <a class="text-dark" href="">Help</a>
+          <span class="text-muted px-2">|</span>
+          <a class="text-dark" href="">Support</a>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center text-lg-right">
+        <div class="d-inline-flex align-items-center">
+          <a class="text-dark px-2" href="">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a class="text-dark px-2" href="">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a class="text-dark px-2" href="">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a class="text-dark px-2" href="">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a class="text-dark pl-2" href="">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-center py-3 px-xl-5">
+      <div class="col-lg-3 d-none d-lg-block">
+        <a href="" class="text-decoration-none">
+          <h1 class="m-0 display-5 font-weight-semi-bold"><span
+              class="text-primary font-weight-bold border px-3 mr-1">Cara</span>Shop</h1>
+        </a>
+      </div>
+      <div class="col-lg-6 col-6 text-left">
+        <form action="">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for products">
+            <div class="input-group-append">
+              <span class="input-group-text bg-transparent text-primary">
+                <i class="fa fa-search"></i>
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-3 col-6 text-right">
+        <a href="" class="btn border">
+          <i class="fas fa-heart text-primary"></i>
+          <span class="badge">0</span>
+        </a>
+        <a href="" class="btn border">
+          <i class="fas fa-shopping-cart text-primary"></i>
+          <span class="badge">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Topbar End -->
+
+
+  <!-- Navbar Start -->
+  <app-header></app-header>
+  <!-- Navbar End -->
+
+
+  <!-- Page Header Start -->
+  <div class="container-fluid bg-secondary mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+      <h1 class="font-weight-semi-bold text-uppercase mb-3">Đăng nhập</h1>
+     
+    </div>
+  </div>
+  <!-- Page Header End -->
+
+
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+            alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form>
+            <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+              <p class="lead fw-normal mb-0 me-3">Sign in with</p>
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-twitter"></i>
+              </button>
+
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-linkedin-in"></i>
+              </button>
+            </div>
+
+            <div class="divider d-flex align-items-center my-4">
+              <p class="text-center fw-bold mx-3 mb-0">Or</p>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email"  class="form-control form-control-lg"
+                name="Email" [(ngModel)]="user.Email"/>
+              <label class="form-label" for="form3Example3">Email </label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <input type="password"  class="form-control form-control-lg" name="MatKhau" [(ngModel)]="user.MatKhau"
+               />
+              <label class="form-label" for="form3Example4">Mật khẩu</label>
+            </div>
+
+           
+
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="button" class="btn btn-primary btn-lg" (click)="login()"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Đăng nhập</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0">Bạn chưa có tài khoản? <a [routerLink]="['/register']"
+                  class="link-danger">Đăng kí</a></p>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+    <div
+      class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+      <!-- Copyright -->
+      <div class="text-white mb-3 mb-md-0">
+        Copyright © Nguyen Trung Hieu.
+      </div>
+      <!-- Copyright -->
+
+    
+    </div>
+  </section>
+
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+</div>

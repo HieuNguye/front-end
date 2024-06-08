@@ -1,0 +1,33 @@
+<div class="box-body">
+    <a  class="btn btn-success mb-5" [routerLink]="['/admin/ordernhap/tools/create']">Thêm hoá đơn nhập</a>
+    <table id="example2" class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Tên nhân viên</th>
+          <th>Tên nhà cung cấp</th>
+          <th>Tình trạng</th>
+          <th>Ngày nhập </th>
+          <th>Tổng tiền</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of list">
+          <td>{{item.TenNV}}</td>
+          <td>{{item.TenNCC}}</td>
+          <td>{{item.TinhTrang}}</td>
+          <td>{{item.NgayNhap}}</td>
+          <td>{{item.TongTien}}</td>
+          
+          <td>
+            <a class="btn btn-primary m-3" [routerLink]="['/admin/ordernhap/tools/update/', item.id]">
+              <fa-icon [icon]="faPenToSquare"></fa-icon></a>
+            <button (click)="delete(item)" class="btn btn-danger ">
+              <fa-icon [icon]="faTrash"></fa-icon>
+            </button>
+          </td>
+        </tr>  
+      </tbody>
+    </table>
+  </div>
+
+  

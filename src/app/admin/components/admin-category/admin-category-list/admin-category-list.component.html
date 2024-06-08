@@ -1,0 +1,27 @@
+<div class="box-body">
+    <a  class="btn btn-success mb-5" [routerLink]="['/admin/category/tools/create']">Thêm Loại sản phẩm</a>
+    <table id="example2" class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Hãng</th>
+          <th>Mô tả</th>
+          <th>Hình ảnh</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of list"> 
+          <td>{{item.TenLGiay}}</td>
+          <td  [innerHTML] = "item.MoTa" ></td>
+          <td><img [src]="item.HinhAnh" alt="" srcset="" width="100"></td>
+          <td>
+            <a class="btn btn-primary m-3" [routerLink]="['/admin/category/tools/update/', item.id]">
+              <fa-icon [icon]="faPenToSquare"></fa-icon></a>
+            <button (click)="delete(item)" class="btn btn-danger ">
+              <fa-icon [icon]="faTrash"></fa-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

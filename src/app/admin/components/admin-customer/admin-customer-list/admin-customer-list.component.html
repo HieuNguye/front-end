@@ -1,0 +1,32 @@
+<div class="box-body">
+    <a  class="btn btn-success mb-5" [routerLink]="['/admin/customer/tools/create']">Thêm khách hàng</a>
+    <table id="example2" class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Tên khách hàng</th>
+          <th>Email</th>
+          <th>Địa Chỉ</th>
+          <th>Số điện thoại</th>
+          
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of list">
+          <td>{{item.TenKH}}</td>
+          <td>{{item.Email}}</td>
+          <td>{{item.DiaChi}}</td>
+          <td>{{item.SDT}}</td>
+          <td>
+            <a class="btn btn-primary m-3" [routerLink]="['/admin/customer/tools/update/', item.MaKH]">
+              <fa-icon [icon]="faPenToSquare"></fa-icon></a>
+            <button (click)="delete(item)" class="btn btn-danger ">
+              <fa-icon [icon]="faTrash"></fa-icon>
+            </button>
+          </td>
+        </tr>  
+      </tbody>
+    </table>
+  </div>
+
+  

@@ -1,0 +1,28 @@
+<div class="box-body">
+    <a  class="btn btn-success mb-5" [routerLink]="['/admin/employee/tools/create']">Thêm nhân viên</a>
+    <table id="example2" class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Tên nhân viên</th>
+          <th>Địa Chỉ</th>
+          <th>Số điện thoại</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of list">
+          <td>{{item.TenNV}}</td>
+          <td>{{item.DiaChi}}</td>
+          <td>{{item.SDT}}</td>
+          <td>
+            <a class="btn btn-primary m-3" [routerLink]="['/admin/employee/tools/update/', item.MaNV]">
+              <fa-icon [icon]="faPenToSquare"></fa-icon></a>
+            <button (click)="delete(item)" class="btn btn-danger ">
+              <fa-icon [icon]="faTrash"></fa-icon>
+            </button>
+          </td>
+        </tr>  
+      </tbody>
+    </table>
+  </div>
+
+  

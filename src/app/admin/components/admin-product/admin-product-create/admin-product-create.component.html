@@ -1,0 +1,53 @@
+<div role="form">
+    <div class="box-body">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Tên giày</label>
+            <input type="text" [(ngModel)]="giay.TenGiay" class="form-control" id="exampleInputEmail1"
+                placeholder="Tên giày">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Mã loại giày</label>
+
+            <select name="MaLGiay" [(ngModel)]="giay.MaLGiay" class="form-control">
+                <option [value]="item.id" *ngFor="let item of listCate">{{item.TenLGiay}}</option>
+            </select>
+            
+        </div>
+
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-2">
+            <label for="validationCustom02">Hình ảnh</label>
+            <form (ngSubmit)="onSubmit()" enctype="multipart/form-data" class="d-flex">
+
+                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"
+                    aria-label="Upload" name="image" (change)="onFileSelected($event)" />
+                <button class="btn btn-success" type="submit" id="inputGroupFileAddon04">
+                    Tải Lên
+                </button>
+            </form>
+            <img *ngIf="imageUrl" [src]="imageUrl" width="150" height="200" />
+            <img *ngIf="giay.HinhAnh !== ''" [src]="giay.HinhAnh" src="" alt="" width="150" height="200" />
+
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Mô tả</label>
+            <ckeditor [(ngModel)]="giay.MoTa" [editor]="Editor" (change)="onChange($event)">
+            </ckeditor>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Giá</label>
+            <input type="text" [(ngModel)]="giay.GiaTB" class="form-control" id="exampleInputPassword1"
+                placeholder="Giá">
+        </div>
+
+    </div>
+    <!-- /.box-body -->
+
+    <div class="box-footer ">
+        <button type="submit" class="btn btn-success mr-5" (click)="submit(type)">{{type}}</button>
+
+        <a [routerLink]="['/admin/product/list']" class="btn btn-danger">Quay lại trang chủ</a>
+    </div>
+</div>

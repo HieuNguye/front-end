@@ -1,0 +1,38 @@
+<div class="box-body">
+    <!-- <a  class="btn btn-success mb-5" [routerLink]="['/admin/employee/tools/create']">Thêm nhân viên</a> -->
+    <table id="example2" class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Mã đơn hàng</th>
+          <th>Tên khách hàng</th>
+          <th>Ngày lập</th>
+          <th>Địa chỉ</th>
+          <th>Tình trạng</th>
+          <th>Tổng tiền</th>
+          <th>Ghi chú</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of list  | paginate: { itemsPerPage: 10, currentPage: p }">
+          <td>{{item.MaDonHang}}</td>
+          <td>{{item.TenKH}}</td>
+          <td>{{item.NgayLap | date : "dd/MM/yyyy"}}</td>
+          <td>{{item.DiaChi}}</td>
+          <td>{{item.TinhTrang}}</td>
+          <td>{{item.TongTien}}</td>
+          <td>{{item.GhiChu}}</td>
+          
+          <td>
+            <a class="btn btn-primary m-3" [routerLink]="['/admin/order/detail/', item.MaDonHang]">
+              <fa-icon [icon]="faPenToSquare"></fa-icon></a>
+            <!-- <button (click)="delete(item)" class="btn btn-danger ">
+              <fa-icon [icon]="faTrash"></fa-icon>
+            </button> -->
+          </td>
+        </tr>  
+      </tbody>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </table>
+  </div>
+
+  

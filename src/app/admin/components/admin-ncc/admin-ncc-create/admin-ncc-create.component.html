@@ -1,0 +1,29 @@
+<div role="form">
+    <div class="box-body">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Tên nhà cung cấp</label>
+            <input type="text" [(ngModel)]="Ncc.TenNCC" class="form-control" id="exampleInputEmail1"
+                placeholder="Tên giày">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Địa chỉ</label>
+            <input type="text" [(ngModel)]="Ncc.DiaChi" class="form-control" id="exampleInputPassword1"
+                placeholder="Giá">
+        </div>
+
+       
+        <div class="form-group">
+            <label for="exampleInputPassword1">SDT</label>
+            <input type="text" [(ngModel)]="Ncc.Sdt" class="form-control" id="exampleInputPassword1"
+                placeholder="Giá">
+        </div>
+
+    </div>
+    <!-- /.box-body -->
+
+    <div class="box-footer ">
+        <button type="submit" class="btn btn-success mr-5" (click)="submit(type)">{{type}}</button>
+
+        <a [routerLink]="['/admin/provider/list']" class="btn btn-danger">Quay lại trang chủ</a>
+    </div>
+</div>

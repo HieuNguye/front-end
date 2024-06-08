@@ -1,0 +1,48 @@
+<div role="form">
+    <div class="box-body">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Mã nhân viên</label>
+            
+                <select [(ngModel)]="OrderNhap.MaNV" class="form-control">
+                    <option *ngFor="let item of employees" [value]="item.MaNV">{{item.TenNV}}</option>
+                </select>   
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Mã nhà cung cấp</label>
+            
+                <select [(ngModel)]="OrderNhap.MaNCC" class="form-control">
+                    <option *ngFor="let item of nccs" [value]="item.MaNCC">{{item.TenNCC}}</option>
+                </select>  
+        </div>
+
+       
+        <div class="form-group">
+            <label for="exampleInputPassword1">Tình trạng</label>
+            <input type="text" [(ngModel)]="OrderNhap.TinhTrang" class="form-control" id="exampleInputPassword1"
+                placeholder="Số điện thoại">
+        </div>
+        
+        <div class="form-group">
+            <label for="exampleInputPassword1">Ngày nhập</label>
+            <input type="date" [(ngModel)]="OrderNhap.NgayNhap" class="form-control" id="exampleInputPassword1"
+                placeholder="Ngày nhập">
+        </div>
+
+
+        
+        <div class="form-group">
+            <label for="exampleInputPassword1">Tổng tiền</label>
+            <input type="text" [(ngModel)]="OrderNhap.TongTien" class="form-control" id="exampleInputPassword1"
+                placeholder="Số điện thoại">
+        </div>
+
+
+    </div>
+    <!-- /.box-body -->
+
+    <div class="box-footer ">
+        <button type="submit" class="btn btn-success mr-5" (click)="submit(type)">{{type}}</button>
+
+        <a [routerLink]="['/admin/ordernhap/list']" class="btn btn-danger">Quay lại trang chủ</a>
+    </div>
+</div>
